@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+<style>
+   body {
+	color: #8c8c8c;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	font-weight: 300;
+	overflow-x: hidden;
+}
+
+a, button { transition: all 0.3s ease; }
+a:hover,
+a:focus {
+	text-decoration: none;
+	outline: none;
+}
+
+h2 { font-size: 2.2rem; }
+.tm-thin-font { font-weight: 300; }
+
+.container-fluid {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1390px;
+	overflow-x: hidden;
+}
+
+@media (max-width: 1390px) {
+	.container-fluid {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
+
+.tm-header-inner {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	height: 100px;
+}
+
+.tm-site-name {
+	color: #cc9900;
+	display: block;
+	font-size: 2.6rem;
+	font-weight: 400;
+}
+
+.tm-main-nav { font-size: 1.2rem; }
+
+.navbar-nav .nav-link {
+	border-radius: 6px;
+	color: black;
+	padding: 10px 40px;
+}
+
+.nav-item.active .nav-link,
+.nav-link:hover,
+.nav-link:focus {
+	color: white;
+	background-color: #cc9900;
+
+}
+.footer-content  h1 {
+        color: #666;
+        font-size: 32px;
+        font-style: italic;
+        margin-bottom: 25px;
+        margin-top: 35px;
+    }
+    .footer-content  p {
+        color: #999;
+        font-style: italic;
+        margin-bottom: 30px;
+    }
+    .copy {
+        color: #666;
+        font-size: 12px;
+        margin-bottom: 30px;
+        margin-top: 10px;
+    }
+.tm-gold-text { color: #cc9900; }
+
+.tm-section {
+	padding-top: 80px;
+	padding-bottom: 100px;
+}
+
+.tm-home-img-container {
+	background-image: url('Images/kollam/Jatayu’s-Earth-Centre-kollam-kb6592.webp');
+	background-size:cover;
+	background-position:center;
+	background-repeat: no-repeat;
+    width: 100%;
+	
+}
+.tm-about-img-container,
+.tm-blog-img-container,
+.tm-contact-img-container {
+	background-size:cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	
+}
+
+.tm-title {
+	margin-bottom: 1rem;
+	line-height: 1.4;
+}
+
+.tm-subtitle {
+	font-size: 1.4rem;
+	max-width: 800px;
+	margin: 0 auto 80px;
+}
+
+.tm-content-box {
+	max-width: 310px;
+	margin: 0 auto;
+}
+
+h3 { font-size: 1.65rem; }
+h4 { 
+	font-size: 1.4rem;
+	line-height: 1.6;
+}
+
+.tm-btn {
+	color: white;
+	background-color: #cc9900;
+	border: none;
+	border-radius: 5px;
+	display: inline-block;
+	padding: 10px 30px;
+}
+
+.tm-btn:hover,
+.tm-btn:focus {
+	background-color: #906E09;
+	color: white;
+	outline: none;
+}
+
+.tm-btn-gray { background-color: #666666; }
+.tm-btn-gray:hover,
+.tm-btn-gray:focus {
+	background-color: #515050;	
+}
+
+.tm-margin-b-15 { margin-bottom: 15px; }
+.tm-margin-b-20 { margin-bottom: 20px; }
+.tm-margin-b-30 { margin-bottom: 30px; }
+.tm-margin-b-40 { margin-bottom: 40px; }
+.tm-margin-t-big { margin-top: 90px; }
+.tm-margin-t-mid { margin-top: 60px; }
+.tm-margin-t-small { margin-top: 30px; }
+
+.tm-text-link { 
+	color: #006699; 
+	line-height: 2.8;
+	text-decoration: underline;
+}
+.tm-overflow-auto { overflow: auto; }
+.tm-small-font { font-size: 1rem; }
+.tm-related-post { margin-bottom: 40px; }
+.tm-related-post:last-child { margin-bottom: 0; }
+.media-left { padding-right: 25px; }
+.media-body {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 25px;
+}
+
+.tm-media-description { margin-bottom: 0; }
+
+.tm-2-col-right { padding-left: 20px; }
+
+.tm-footer {
+	color: #c6c6c6;
+	background-color: #191919;
+	background-image: url('../img/classic-pattern-bg.png');
+	font-size: 1rem;
+	padding-top: 40px;
+	padding-bottom: 20px;
+}
+
+.tm-footer-links-container { padding-left: 10px; }
+
+.tm-footer-link {
+	color: #CCCC66;
+	line-height: 2.8;
+	text-decoration: underline;
+}
+
+.tm-footer-link:hover,
+.tm-footer-link:focus {
+	color: #CCCC66;
+	text-decoration: none;
+}
+.tm-footer-thumbnail { margin-bottom: 5px; }
+
+.tm-copyright-text { 
+	color: #999999; 
+	margin-bottom: 0;
+}
+
+hr { border-top: 1px solid #CCCCCC; }
+p { line-height: 1.9; }
+
+.tm-gray-bg { 
+	background-color: #CCCCCC; 
+	color: black;
+	padding: 30px 20px 20px;
+}
+.tm-footer-content-box-title { margin-bottom: 30px; }
+
+.tm-img-post { margin-bottom: 30px; }
+
+.tm-aside-r { padding-left: 30px; }
+
+.form-control {
+	border-radius: 0;
+	font-size: 1.1rem;
+	padding: 0.75rem 1rem;
+}
+
+.form-control:focus { border-color: #CC9900; }
+
+.tm-form-description { margin-top: 30px; }
+.tm-contact-form { padding-top: 20px; }
+
+#google-map {
+    height: 333px;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.tm-contact-right { padding-left: 30px; }
+.tm-p-small { font-size: 1rem; }
+
+@media (max-width: 1199px) {
+	.tm-2-col-left { padding-right: 0; }
+	.tm-2-col-right { padding-left: 0; }
+	.tm-text-link {
+		line-height: 2.2;
+	}
+	.container-fluid {
+		padding-left: 4%;
+		padding-right: 4%;
+	}
+}
+
+@media (max-width: 991px){
+
+	.tm-home-img-container {
+		background:none;
+		height: auto;
+	}
+
+	.tm-subtitle { margin-bottom: 40px; }
+	
+	#tmNavbar .navbar-nav .nav-link { padding: 10px 25px; }
+	.media { max-width: 240px; }
+	.media-left {
+		display: block;
+		margin-bottom: 20px;
+	}
+
+	.tm-content-box { margin-bottom: 50px; }
+	.tm-text-link { line-height: 2.4; }
+
+	.tm-section {
+	    padding-top: 50px;
+	    padding-bottom: 60px;
+	}
+
+	.tm-2-col-left, .tm-2-col-right { 
+		margin: 0 auto;
+		max-width: 660px; 
+	}
+	
+	.tm-margin-t-big { margin-top: 30px; }
+	.media { max-width: 100%; }
+	.media-left {
+		display: table-cell;
+		margin-bottom: 0;
+	}
+
+	.tm-footer-content-box { margin-bottom: 40px; }
+
+	.tm-2-rows-md-swap {
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-flex-direction: column;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+	}
+
+	.tm-2-rows-md-down-1 {
+		-webkit-order: 1;
+		    -ms-flex-order: 1;
+		        order: 1;		
+	}
+	.tm-2-rows-md-down-2 {
+		-webkit-order: 2;
+		    -ms-flex-order: 2;
+		        order: 2;
+		margin-bottom: 0;
+		margin-top: 30px;		
+	}
+
+	.tm-contact-right { 
+		padding-left: 15px; 
+		padding-top: 40px;
+	}
+}
+
+@media (max-width: 897px) {
+	.tm-btn {
+		padding: 10px 15px;
+		font-size: 1rem;
+	}
+}
+
+@media (max-width: 767px) {
+	.tm-main-nav {
+		position: fixed;
+		right: 0;
+		top: 21px;
+		z-index: 1000;
+	}
+	#tmNavbar .navbar-nav .nav-item { float: none; }
+	#tmNavbar .navbar-nav .nav-link { padding: 10px 35px; }
+	#tmNavbar {
+		background: white; 
+		border-radius: 6px;
+	}
+	#tmNavbar .navbar-nav .nav-item+.nav-item { margin-left: 0; }
+	.navbar-toggler {
+		background: white;
+		border-color: #cc9900;
+		color: #cc9900;
+		display: block;
+		margin-left: auto;
+		margin-right: 0;
+	}
+	.navbar-toggler:focus { outline: none; }
+	.tm-content-box { margin-bottom: 50px; }
+	
+	.tm-2-col-left {
+		padding-right: 0;
+		max-width: 660px;
+	}
+
+	.tm-2-col-right { padding-left: 0; }
+	.tm-margin-b-40 { margin-bottom: 25px; }
+	
+	.tm-copyright-text { padding-top: 0; }
+	.tm-gray-bg { padding: 20px 20px 10px; }
+	.tm-footer { padding-bottom: 15px; }
+
+	.tm-2-rows-sm-swap {
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-flex-direction: column;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+	}
+
+	.tm-2-rows-sm-down-1 {
+		-webkit-order: 1;
+		    -ms-flex-order: 1;
+		        order: 1;		
+	}
+	.tm-2-rows-sm-down-2 {
+		-webkit-order: 2;
+		    -ms-flex-order: 2;
+		        order: 2;
+		margin-bottom: 0;
+		margin-top: 30px;		
+	}
+
+	.tm-sm-m-b { margin-bottom: 20px; }
+	.tm-aside-r { padding-left: 15px; }
+	.tm-aside-container {
+		max-width: 310px;
+		margin: 0 auto;
+	}
+
+	.tm-blog-post {	padding-bottom: 10px; }
+	.tm-content-box-contact {
+		margin-top: 40px;
+		margin-bottom: 0;
+	}
+
+	.tm-contact-row-related-posts {	margin-top: 40px; }
+}
+
+@media (max-width: 543px) {
+	.tm-footer-links-container { padding-left: 0; }
+	.tm-xs-m-t { margin-top: 20px; }
+	.tm-btn { padding: 10px 30px; }
+}
+
+@media(max-width: 510px) {
+	.media { max-width: 240px; }
+	.media-left {
+		display: block;
+		margin-bottom: 20px;
+	}
+		
+	.tm-section {
+		padding-top: 10%;
+		padding-bottom: 10%;
+	}
+
+	.tm-subtitle { margin-bottom: 20px; }
+	.tm-margin-b-40 { margin-bottom: 15px; }
+	.tm-content-box { margin-bottom: 40px; }
+	.tm-margin-t-mid { margin-top: 30px; }
+	.tm-footer-content-box { margin-bottom: 40px; }
+	.tm-footer-content-box-title { margin-bottom: 15px; }
+	#google-map { margin-top: 25px; }
+	.tm-map-section { margin-top: 50px; }
+
+	.tm-contact-related-posts-container {
+		max-width: 240px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+</style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand" href="#myPage">KERALA TOURISM</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="destination.html">DESTINATIONS</a></li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+
+    
+    <div class="tm-home-img-container">
+        <img src="Images/kollam/Jatayu’s-Earth-Centre-kollam-kb6592.webp" alt="Image" class="hidden-lg-up img-fluid">
+    </div>
+
+    <section class="tm-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-xs-center">
+                    <h2 class="tm-gold-text tm-title">EXPLORE KOLLAM</h2>
+                    <p class="tm-subtitle">Kollam is a city in the state of Kerala, on India's Malabar Coast. It’s known as a trade hub and for its beaches, like lively Kollam and secluded Thirumullavaram. Sardar Vallabhbhai Patel Police Museum has artifacts tracing the history of the police force. Nearby, Ashtamudi Lake is a gateway to the Kerala backwaters, a network of waterways rich with vegetation. The striped 1902 Tangasseri Lighthouse has ocean views.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+
+                    <div class="tm-content-box">
+                        <img src="Images/kollam/jatayu_adventure_centre20180919110817_262_1.jpg" alt="Image" class="tm-margin-b-20 img-fluid">
+                        <h4 class="tm-margin-b-20 tm-gold-text">JADAYUPARA</h4>
+                        <p class="tm-margin-b-20">Spread across 65 acres of land, Jatayu Earth's Centre is a rock-themed park built to promote mythology and adventure. The world’s largest bird sculpture is the main attraction at Jatayupara Nature Park and is one among the several Kollam famous places. It has a 6D theatre, a digital audio-visual room, cable car and the Siddha Cave Healing Centre. The virtual reality museum here tells the story of Jatayu to visitors. It is also home to umpteen adventure activities including paintball, laser tag, archery, bouldering, rock climbing, air-rifle shooting, zip lining, trekking, rappelling, valley crossing, etc.</p>
+                        <a href="#" class="tm-btn text-uppercase">Read More</a>    
+                    </div>  
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+
+                    <div class="tm-content-box">
+                        <img src="Images/kollam/Tthenmala.jpg" alt="Image" class="tm-margin-b-20 img-fluid">
+                        <h4 class="tm-margin-b-20 tm-gold-text">THENMALA</h4>
+                        <p class="tm-margin-b-20">Thenmala is India’s first planned eco-tourism destination located in the foothills of the Western Ghats of the Kollam district which is recognised as a UNESCO World Heritage Site. Thenmala means honey hill. Thenmala is also a dam site with the Parappar Dam which spans the Kallada River. The honey collected from Thenmala forest is famous for its medicinal values. This place has facilities like winding pathways, Sway Bridge, amphitheatre, musical fountain, boating, & so on. To the east, Pathimoonam Kannara Bridge is a 13-arched bridge along a mountain railway route. The other attraction of Thenmala is the Deer Park.</p>
+                        <a href="#" class="tm-btn text-uppercase">Read More</a>    
+                    </div>  
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+
+                    <div class="tm-content-box">
+                        <img src="Images/kollam/palaruvi_waterfalls_kollam20140104122300_42_1.jpg" alt="Image" class="tm-margin-b-20 img-fluid">
+                        <h4 class="tm-margin-b-20 tm-gold-text">PALARUVI WATERFALLS</h4>
+                        <p class="tm-margin-b-20">Palaruvi Waterfalls, which literally translates to ‘Stream of Milk’. The white-stream waterfall descending from the height of 300ft resembles the shape of a horse’s tail. An ideal time to visit this place is from June to January.  It is the 32nd highest waterfall in India, also known to have Ayurvedic properties. The roaring sounds of the fall stand in stark contrast to the silence of the forests and mist-kissed mountains around it, therefore making it among the best tourist spots in Kollam.</p>
+                        <a href="#" class="tm-btn text-uppercase">Read More</a>    
+                    </div>  
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+
+                    <div class="tm-content-box">
+                        <img src="Images/kollam/ashtamudi.jfif" alt="Image" class="tm-margin-b-20 img-fluid">
+                        <h4 class="tm-margin-b-20 tm-gold-text">ASHTAMUDI LAKE</h4>
+                        <p class="tm-margin-b-20">The incredible beauty of Kerala, Ashtamudi Lake, it’s name has been derived from two words 'Ashta' meaning eight and 'Mudi' meaning branch, thereby stating the fact that lake has eight branches. It’s the second largest lake in Kerala. Thick coconut groves and palm trees can be seen all along the banks of the lake. The banks of the lake are also famous for the Chinese fishing nets. Backwater cruises are also available in the lake, between Kollam and Alappuzha. The boat cruise to Munroe Islands is a wonderful experience. There are many resorts along the lake that offer variety of water sports.</p>
+                        <a href="#" class="tm-btn text-uppercase">Read More</a>    
+                    </div>  
+
+                </div>
+
+                <footer id="footer-area">
+                    <div class="container">
+                      <div class="row text-center">
+                        <div class="col-sm-12">
+                          <div class="footer-content">
+                            <h1>KERALA TOURISM</h1>
+                            <p>“GOD'S OWN COUNTRY .”</p>
+                            </div>                
+                          </div>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-sm-12 text-center">             
+                            <p class="copy">Copyright © 2022 Kerala Tourism</p>
+                          </div>
+                        </div>
+                      </div>
+                    </footer>
+
+      </body>
